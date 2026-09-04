@@ -1,10 +1,18 @@
 # 乐飞 Agent Skills（lefei-skills-srl）
 
-AI 学伴「乐飞」（lefly-companion）项目自研的 5 个文档型 Agent Skill，以及配套数据脱敏脚本。
+AI 学伴「乐飞」（lefly-companion）项目自研的 5 个文档型 Agent Skill，Matt Pocock 开源工程技能集的本地同步副本，以及配套数据脱敏脚本。
 
-每个 Skill 是一个独立目录，入口为 `SKILL.md`（frontmatter 含 `name` / `version` / `description`）。`dist/` 下是对应的发布 ZIP 备份（每个 ZIP 根目录仅含一个 `SKILL.md`），可直接用于 ModelScope Skills 等平台的提交物。
+## 目录结构
 
-## Skills 一览（5 个）
+| 目录 | 内容 | 来源 |
+|---|---|---|
+| `character-persona` 等 5 个顶层目录 | 乐飞自研 Skill（见下表） | 自研 |
+| `engineering/`（19 个） | Matt Pocock 工程技能集（正式发布集） | 上游同步，见下 |
+| `productivity/`（8 个） | Matt Pocock 生产力技能集（正式发布集） | 上游同步，见下 |
+| `dist/` | 乐飞 5 个 Skill 的发布 ZIP 备份 | — |
+| `scripts/` | 数据脱敏脚本 | 自研 |
+
+## 乐飞自研 Skills（5 个）
 
 | Skill | 中文名 | 用途 |
 |---|---|---|
@@ -14,7 +22,27 @@ AI 学伴「乐飞」（lefly-companion）项目自研的 5 个文档型 Agent S
 | `memory-system` | 乐飞事实记忆 | 每 10 轮自动沉淀事实记忆、supersede 替代链、增删改边界 |
 | `profile-analytics` | 乐飞用户画像 | 画像抽取与注入、标签增删改查、删除边界（不联动统计/记忆） |
 
-这 5 个 Skill 覆盖乐飞后端五大核心模块（角色 / 情绪 / 工具 / 记忆 / 画像），均为纯文档型指南：不含后端源码、数据库、`.env` 或任何密钥。
+覆盖乐飞后端五大核心模块（角色 / 情绪 / 工具 / 记忆 / 画像），均为纯文档型指南：不含后端源码、数据库、`.env` 或任何密钥。
+
+## Matt Pocock Skills（27 个，上游同步）
+
+来源：[mattpocock/skills](https://github.com/mattpocock/skills)（MIT），同步自上游 `main` 分支 commit `3cca18b`（2026-09-04）。
+
+**Engineering（19 个）**
+
+- 用户主动调用：`ask-matt`（技能路由器）、`grill-with-docs`、`triage`、`improve-codebase-architecture`、`setup-matt-pocock-skills`、`to-spec`、`to-tickets`、`implement`、`wayfinder`
+- 模型自动调用：`prototype`、`diagnosing-bugs`、`research`、`tdd`、`domain-modeling`、`codebase-design`、`code-review`、`resolving-merge-conflicts`、`wizard`
+
+**Productivity（8 个）**
+
+- 用户主动调用：`grill-me`、`handoff`、`teach`、`to-questionnaire`、`wait-what`
+- 模型自动调用：`grilling`、`writing-for-agents`
+
+说明：本仓库早期（commit `fe4183d`）引入过其中 8 个（code-review / grill-with-docs / handoff / implement / setup-matt-pocock-skills / tdd / to-spec / to-tickets），本次同步已验证该 8 个与上游最新版逐字节一致，并补齐其余 19 个。上游的 `in-progress/`、`misc/`、`deprecated/` 为作者实验区，未纳入。
+
+### 长任务推荐工作流
+
+超大任务（单个 session 装不下）用 `wayfinder` 起手，把工作拆成 issue tracker 上的决策票逐个解决；常规流程：`grill-with-docs` 打磨方案 → `to-spec` 沉淀 spec → `to-tickets` 拆工单 → `implement` 实现（内部驱动 `/tdd` 与 `/code-review`）→ `handoff` 跨 session 交接。
 
 ## 脱敏脚本
 
@@ -36,4 +64,4 @@ python scripts/desensitize.py [db路径] [输出md路径]
 
 ## 许可证
 
-[Apache-2.0](LICENSE)
+[Apache-2.0](LICENSE)（乐飞自研部分）；`engineering/`、`productivity/` 目录内容遵循上游 [MIT](https://github.com/mattpocock/skills/blob/main/LICENSE) 许可证。
