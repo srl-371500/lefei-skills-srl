@@ -1,23 +1,20 @@
 # 乐飞 Agent Skills（lefei-skills-srl）
 
-大学生 AI 学伴「乐飞」项目日常使用的 Agent 工程技能集（8 个 Skill）与配套数据脱敏脚本。
+大学生 AI 学伴「乐飞」（lefly-companion）项目自研的 5 个文档型 Agent Skill，以及配套数据脱敏脚本。
 
-每个 Skill 目录遵循通用约定：`SKILL.md` 为入口（frontmatter 含 `name` / `description`），`agents/openai.yaml` 为 OpenAI 兼容 Agent 的清单文件，附属 `*.md` 为按需加载的参考文档。
+每个 Skill 是一个独立目录，入口为 `SKILL.md`（frontmatter 含 `name` / `version` / `description`）。`dist/` 下是对应的发布 ZIP 备份（每个 ZIP 根目录仅含一个 `SKILL.md`），可直接用于 ModelScope Skills 等平台的提交物。
 
-## Skills 一览（8 个）
+## Skills 一览（5 个）
 
-| Skill | 用途 |
-|---|---|
-| `tdd` | 测试驱动开发：红-绿-重构节奏，含 mocking 与测试组织参考文档 |
-| `code-review` | 双轴代码评审：按仓库编码规范（Standards）与原始 spec（Spec）并行审查一段改动 |
-| `to-spec` | 把当前对话沉淀为 spec 并发布到项目的 issue tracker（纯综合，不追问） |
-| `to-tickets` | 把计划 / spec / 对话拆成一串可追踪的 tracer-bullet 工单，声明阻塞关系 |
-| `implement` | 基于 spec 或一组工单实现一段工作 |
-| `grill-with-docs` | 用连续追问打磨方案，边问边沉淀 ADR 与术语表 |
-| `handoff` | 把当前会话压缩成交接文档，供下一个 Agent 接手 |
-| `setup-matt-pocock-skills` | 一次性配置仓库：issue tracker、triage 标签体系、领域文档布局 |
+| Skill | 中文名 | 用途 |
+|---|---|---|
+| `character-persona` | 乐飞角色人设 | 角色切换、人设 prompt、开场白与角色接口的开发指南 |
+| `emotion-analytics` | 乐飞情绪分析 | 情绪枚举（joy/anger/sadness/neutral）、焦虑度口径、统计接口 |
+| `llm-tools` | 乐飞工具调用与知识检索 | function calling 工具（情绪报告/提醒）与 jieba 关键词检索边界 |
+| `memory-system` | 乐飞事实记忆 | 每 10 轮自动沉淀事实记忆、supersede 替代链、增删改边界 |
+| `profile-analytics` | 乐飞用户画像 | 画像抽取与注入、标签增删改查、删除边界（不联动统计/记忆） |
 
-> 以上技能源自 Matt Pocock 的 engineering skills 集合，在本项目中实际使用与验证。
+这 5 个 Skill 覆盖乐飞后端五大核心模块（角色 / 情绪 / 工具 / 记忆 / 画像），均为纯文档型指南：不含后端源码、数据库、`.env` 或任何密钥。
 
 ## 脱敏脚本
 
@@ -35,4 +32,8 @@ python scripts/desensitize.py [db路径] [输出md路径]
 
 ## 安全声明
 
-本仓库已做敏感信息审查，不含 API key、密码及个人隐私数据。
+本仓库已做敏感信息审查，不含 API key、密码、数据库及真实用户数据。
+
+## 许可证
+
+[Apache-2.0](LICENSE)
