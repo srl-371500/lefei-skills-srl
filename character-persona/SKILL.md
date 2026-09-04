@@ -10,7 +10,7 @@ tags: [education, digital-human, persona]
 
 ## 是什么
 
-乐飞是大学生 AI 学伴数字人，支持多角色（学业/生活等场景化人格，完整清单以 `GET /api/characters` 与 `data/characters/` 语料为准）。人设决定 system prompt 的底座，与画像/记忆注入叠加构成最终人格。
+乐飞是 AI 学伴数字人，支持多角色（学业/生活等场景化人格，完整清单以 `GET /api/characters` 与 `data/characters/` 语料为准）。人设决定 system prompt 的底座，与画像/记忆注入叠加构成最终人格。
 
 ## 关键文件
 
@@ -24,10 +24,10 @@ tags: [education, digital-human, persona]
 1. 人设 prompt（角色底座）
 2. 用户画像（实时读取，删标签即刻"遗忘"）
 3. 会话摘要 + top-k 事实记忆（`_relevant_memories` jieba 打分取最相关）
-4. 老师客户端可能自带 system 注入（客户端行为，后端不覆盖）
+4. 部分客户端可能自带 system 注入（客户端行为，后端不覆盖）
 
 ## 开发铁律
 
-- 改人设语料 = 改产品人格，必须老师拍板，勿顺手润色
+- 改人设语料 = 改产品人格，必须产品侧拍板，勿顺手润色
 - 角色枚举以 `characters.py` 返回为准，前端硬编码的角色名与后端不一致时以后端为准
 - 情绪枚举 joy/anger/sadness/neutral 与人设无关，勿在人设语料里写死旧枚举（旧版 happy 已废弃）

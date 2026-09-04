@@ -12,7 +12,7 @@ tags: [education, digital-human, profile]
 
 乐飞为每个用户维护一张轻量画像（key-value 标签，如 年级=大三、爱好=插画）。数据存 SQLite `profile` 表，主键 `(user_id, key)`，即**每个用户独立一份**。
 
-## 关键文件（老师标准版 lefly-companion）
+## 关键文件（lefly-companion）
 
 - `app/db.py` — `upsert_profile` / `delete_profile` / `get_profile`，全部带 user_id 归一化
 - `app/analytics.py` — 每 10 轮对话由 LLM 自动抽取画像增量
@@ -32,6 +32,6 @@ tags: [education, digital-human, profile]
 
 ## 开发铁律
 
-- 老师客户端强制 `stream=True`、发送 `tools`、可能注入 system，改聊天协议前先读 SPEC/联调清单
+- 数字人客户端强制 `stream=True`、发送 `tools`、可能注入 system，改聊天协议前先读 SPEC/联调清单
 - 多用户隔离：所有读写必须带 user_id；测试参考 `tests/test_main.py`
 - TDD：先写失败测试再实现，统一用 `D:\Python314\python.exe -m pytest`

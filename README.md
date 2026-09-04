@@ -1,6 +1,6 @@
 # 乐飞 Agent Skills（lefei-skills-srl）
 
-大学生 AI 学伴「乐飞」（lefly-companion）项目自研的 5 个文档型 Agent Skill，以及配套数据脱敏脚本。
+AI 学伴「乐飞」（lefly-companion）项目自研的 5 个文档型 Agent Skill，以及配套数据脱敏脚本。
 
 每个 Skill 是一个独立目录，入口为 `SKILL.md`（frontmatter 含 `name` / `version` / `description`）。`dist/` 下是对应的发布 ZIP 备份（每个 ZIP 根目录仅含一个 `SKILL.md`），可直接用于 ModelScope Skills 等平台的提交物。
 
