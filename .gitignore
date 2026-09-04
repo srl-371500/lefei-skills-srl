@@ -6,3 +6,6 @@ __pycache__/
 *.sqlite3
 .DS_Store
 Thumbs.db
+
+# 上游完整镜像，仅本地参考，不入库
+matt-skills-ref/

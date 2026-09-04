@@ -1,6 +1,6 @@
-# 乐飞 Agent Skills（lefei-skills-srl）
+# Skill 汇总（lefei-skills-srl）
 
-AI 学伴「乐飞」（lefly-companion）项目自研的 5 个文档型 Agent Skill，Matt Pocock 开源工程技能集的本地同步副本，以及配套数据脱敏脚本。
+本目录是 Skill 汇总仓库：AI 学伴「乐飞」（lefly-companion）自研的 5 个文档型 Skill、Matt Pocock 开源工程技能集的本地同步副本（`engineering/` + `productivity/`，27 个），以及配套数据脱敏脚本。`matt-skills-ref/` 为上游完整镜像，仅本地参考、不入库。
 
 ## 目录结构
 
