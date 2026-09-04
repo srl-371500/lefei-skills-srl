@@ -1,6 +1,6 @@
 ---
 name: profile-analytics
-version: "1.0.0"
+version: "1.0.1"
 description: 乐飞(lefly-companion)用户画像模块开发指南。Use when 开发/调试用户画像抽取、画像标签增删改查、画像注入对话、或排查"删了画像标签但统计/记忆里还有"这类问题时。
 author: lefly-team
 tags: [education, digital-human, profile]

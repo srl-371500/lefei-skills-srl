@@ -1,6 +1,6 @@
 ---
 name: emotion-analytics
-version: "1.0.0"
+version: "1.0.1"
 description: 乐飞(lefly-companion)情绪分析模块开发指南。Use when 开发/调试情绪识别、焦虑度、感受备注、情绪热力日历、情绪曲线、关键词统计相关功能，或排查统计口径问题时。
 author: lefly-team
 tags: [education, digital-human, analytics]

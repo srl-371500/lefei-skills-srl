@@ -1,6 +1,6 @@
 ---
 name: memory-system
-version: "1.0.0"
+version: "1.0.1"
 description: 乐飞(lefly-companion)事实记忆模块开发指南。Use when 开发/调试记忆沉淀、记忆时间线、记忆编辑删除、替代链(supersede)语义，或排查"记忆改不了/删不干净"问题时。
 author: lefly-team
 tags: [education, digital-human, memory]

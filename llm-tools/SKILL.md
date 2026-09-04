@@ -1,6 +1,6 @@
 ---
 name: llm-tools
-version: "1.0.0"
+version: "1.0.1"
 description: 乐飞(lefly-companion)LLM 工具调用与知识检索开发指南。Use when 开发/调试 function calling 工具、DashScope 接入、知识库语料检索，或排查"模型没调工具/检索不中"问题时。
 author: lefly-team
 tags: [education, digital-human, tool-calling]

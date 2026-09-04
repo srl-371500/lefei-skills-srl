@@ -1,6 +1,6 @@
 ---
 name: character-persona
-version: "1.0.0"
+version: "1.0.1"
 description: 乐飞(lefly-companion)角色人设模块开发指南。Use when 开发/调试角色切换、人设 prompt、开场白、角色接口，或排查"人格不一致/说话不像乐飞"问题时。
 author: lefly-team
 tags: [education, digital-human, persona]
